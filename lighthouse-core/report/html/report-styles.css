@@ -17,7 +17,7 @@
 
 .lh-vars {
   --text-font-family: Roboto, Helvetica, Arial, sans-serif;
-  --monospace-font-family: 'Menlo', 'dejavu sans mono', 'Consolas', 'Lucida Console', monospace;
+  --monospace-font-family: 'Roboto Mono', 'Menlo', 'dejavu sans mono', 'Consolas', 'Lucida Console', monospace;
   --body-background-color: #fff;
   --body-font-size: 16px;
   --body-line-height: 24px;
@@ -82,7 +82,10 @@
   --chevron-size: 12px;
   --circle-size: calc(3 * var(--header-font-size));
 
+  /* TODO(cjamcl) clean up unused variables. */
   --audits-margin-bottom: 40px;
+  --circle-size-big: 120px;
+  --circle-size: 96px;
   --color-black-100: #F5F5F5;
   --color-black-200: #E0E0E0;
   --color-black-400: #BDBDBD;
@@ -98,21 +101,17 @@
   --color-red-700: #EB0F00;
   --color-red: #FF4E42;
   --color-white: #FFFFFF;
+  --env-name-min-width: 220px;
   --header-padding: 20px 0 20px 0;
-  --item-bg: var(--color-black-100);
-  --item-padding: 10px 0px;
   --score-container-padding: 12px;
   --score-container-width: 160px;
-  --score-number-fontsize-big: 42px;
-  --score-number-fontsize: 34px;
-  --score-size-big: 120px;
-  --score-size: 96px;
+  --score-number-font-size-big: 42px;
+  --score-number-font-size: 34px;
   --score-title-font-size-big: 28px;
   --score-title-font-size: 20px;
   --score-title-line-height-big: 36px;
   --score-title-line-height: 26px;
   --section-padding: 40px;
-  --env-name-min-width: 220px;
   --topbar-padding: 0 8px;
 
   --pass-icon-url: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><title>check</title><path fill="%23178239" d="M24 4C12.95 4 4 12.95 4 24c0 11.04 8.95 20 20 20 11.04 0 20-8.96 20-20 0-11.05-8.96-20-20-20zm-4 30L10 24l2.83-2.83L20 28.34l15.17-15.17L38 16 20 34z"/></svg>');
@@ -141,50 +140,24 @@
 
 @media only screen and (max-width: 480px) {
   .lh-vars {
-    --audits-margin-bottom: 24px;
+    --audits-margin-bottom: 20px;
     --body-font-size: 14px;
+    --body-line-height: 20px;
+    --circle-size-big: 96px;
+    --circle-size: 72px;
+    --env-name-min-width: 120px;
     --header-padding: 16px 0 16px 0;
     --score-container-padding: 8px;
     --score-container-width: 112px;
-    --score-number-fontsize-big: 34px;
-    --score-number-fontsize: 26px;
-    --score-size-big: 96px;
-    --score-size: 72px;
+    --score-number-font-size-big: 34px;
+    --score-number-font-size: 26px;
     --score-title-font-size-big: 22px;
     --score-title-font-size: 14px;
     --score-title-line-height-big: 26px;
     --score-title-line-height: 20px;
     --section-padding: 24px;
-    --env-name-min-width: 120px;
     --topbar-height: 32px;
   }
-
-  .two-col.audits .audit {
-    width: auto;
-  }
-  .two-col.audits .audit:nth-child(2n) {
-    float: none;
-  }
-  .two-col.audits .audit:nth-child(2n+1) {
-    float: none;
-  }
-  #audits-performance-metrics .audit:nth-child(6n+2) {
-    border-top: none;
-  }
-
-  #screenshots {
-    -webkit-column-count: 5;
-    -webkit-column-gap: 12px;
-  }
-  #screenshots div:nth-child(2n) {
-    display: none;
-  }
-  .audit .secondary {
-    display: none;
-  }
-  /* #section-runtimesettings .items .item {
-    display: block;
-  } */
 }
 
 .lh-vars.lh-devtools {
@@ -901,7 +874,7 @@
 
 .lh-scorescale-range {
   margin: 0 12px;
-  font-family: 'Roboto Mono', monospace;
+  font-family: var(--monospace-font-family);
   white-space: nowrap;
 }
 
