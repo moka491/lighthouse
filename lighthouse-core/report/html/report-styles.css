@@ -103,6 +103,8 @@
   --color-white: #FFFFFF;
   --env-name-min-width: 220px;
   --header-padding: 20px 0 20px 0;
+  --item-bg: var(--color-black-100);
+  --item-padding: 10px 0px;
   --score-container-padding: 12px;
   --score-container-width: 160px;
   --score-number-font-size-big: 42px;
