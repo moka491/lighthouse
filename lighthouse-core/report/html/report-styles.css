@@ -80,7 +80,6 @@
   --lh-audit-group-vpadding: 8px;
   --lh-section-vpadding: 12px;
   --chevron-size: 12px;
-  --circle-size: calc(3 * var(--header-font-size));
 
   /* TODO(cjamcl) clean up unused variables. */
   --audits-margin-bottom: 40px;
