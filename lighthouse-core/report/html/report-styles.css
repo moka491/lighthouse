@@ -101,10 +101,10 @@
   --color-red-700: #EB0F00;
   --color-red: #FF4E42;
   --color-white: #FFFFFF;
+  --env-item-bg: var(--color-black-100);
   --env-name-min-width: 220px;
+  --env-tem-padding: 10px 0px;
   --header-padding: 20px 0 20px 0;
-  --item-bg: var(--color-black-100);
-  --item-padding: 10px 0px;
   --score-container-padding: 12px;
   --score-container-width: 160px;
   --score-number-font-size-big: 42px;
