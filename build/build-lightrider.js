@@ -25,19 +25,6 @@ const entryDistName = 'lighthouse-lr-bundle.js';
 makeDir.sync(path.dirname(distDir));
 
 /**
- * @return {Promise<void>}
- */
-async function copyAssets() {
-  return cpy([
-    'clients/lightrider/lightrider-ui-features.js',
-    'lighthouse-core/lib/file-namer.js',
-  ], distDir, {
-    cwd: LHROOT,
-    parents: false,
-  });
-}
-
-/**
  * Browserify and minify entry point.
  */
 function buildEntryPoint() {
@@ -62,7 +49,6 @@ function buildReportGenerator() {
 async function run() {
   await Promise.all([
     buildEntryPoint(),
-    copyAssets(),
     buildReportGenerator(),
   ]);
 }
