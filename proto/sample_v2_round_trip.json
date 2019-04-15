@@ -3606,7 +3606,8 @@
     }, 
     "lighthouseVersion": "4.3.0", 
     "requestedUrl": "http://localhost:10200/dobetterweb/dbw_tester.html", 
-    "runWarnings": [], 
+    "runWarnings": [],
+    "stackPacks": [],
     "timing": {
         "entries": [
             {
