@@ -5,6 +5,8 @@
  */
 'use strict';
 
+const pageFunctions = require('../../lib/page-functions.js');
+
 /** @typedef {void|LH.GathererArtifacts[keyof LH.GathererArtifacts]} PhaseResult */
 
 /**
@@ -57,3 +59,8 @@ class Gatherer {
 }
 
 module.exports = Gatherer;
+
+Gatherer.pageFunctions = {
+  getElementsInDocumentString: pageFunctions.getElementsInDocumentString,
+  getNodeSelectorString: pageFunctions.getNodeSelectorString,
+};

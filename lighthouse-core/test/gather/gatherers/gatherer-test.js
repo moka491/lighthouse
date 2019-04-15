@@ -7,12 +7,29 @@
 
 /* eslint-env jest */
 
+const jsdom = require('jsdom');
 const Gatherer = require('../../../gather/gatherers/gatherer');
-const assert = require('assert');
 
 describe('Gatherer', () => {
   it('returns its name', () => {
     const g = new Gatherer();
-    return assert.equal(g.name, 'Gatherer');
+    expect(g.name).toEqual('Gatherer');
+  });
+
+  it('should expose page functions', () => {
+    expect(Gatherer).toHaveProperty('pageFunctions');
+    expect(Gatherer.pageFunctions).toHaveProperty('getNodeSelectorString');
+    expect(Gatherer.pageFunctions).toHaveProperty('getElementsInDocumentString');
+  });
+
+  it('should expose page functions', () => {
+    const {document} = new jsdom.JSDOM().window;
+    const fn = eval(`(() => {
+      ${Gatherer.pageFunctions.getNodeSelectorString}
+      return getNodeSelector
+    })()`);
+    const el = document.createElement('div');
+    el.id = 'test';
+    expect(fn(el)).toEqual('div#test');
   });
 });
