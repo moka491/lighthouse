@@ -6,13 +6,11 @@
 'use strict';
 
 const browserify = require('browserify');
-const cpy = require('cpy');
 const fs = require('fs');
 const path = require('path');
 const makeDir = require('make-dir');
 const bundleBuilder = require('./build-bundle.js');
 
-const LHROOT = path.join(__dirname, '..');
 const distDir = path.join(__dirname, '..', 'dist', 'lightrider');
 const sourceDir = __dirname + '/../clients/lightrider';
 
