@@ -5,7 +5,7 @@
  */
 'use strict';
 
-const stackPacks = require('@lighthouse/stack-packs');
+const stackPacks = require('../../stack-packs/index.js');
 
 const stackPacksToInclude = [{
   packId: 'wordpress',
