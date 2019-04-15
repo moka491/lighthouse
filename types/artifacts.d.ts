@@ -34,7 +34,7 @@ declare global {
       /** Parsed version of the page's Web App Manifest, or null if none found. */
       WebAppManifest: Artifacts.Manifest | null;
       /** Information on detected tech stacks (e.g. JS libraries) used by the page. */
-      Stacks: Artifacts.DetectedStack[] | null;
+      Stacks: Artifacts.DetectedStack[];
       /** A set of page-load traces, keyed by passName. */
       traces: {[passName: string]: Trace};
       /** A set of DevTools debugger protocol records, keyed by passName. */
@@ -192,6 +192,8 @@ declare global {
         src: string | null
         async: boolean
         defer: boolean
+        /** Path that uniquely identifies the node in the DOM */
+        devtoolsNodePath: string;
         /** Where the script was discovered, either in the head, the body, or network records. */
         source: 'head'|'body'|'network'
         /** The content of the inline script or the network record with the matching URL, null if the script had a src and no network record could be found. */
@@ -367,7 +369,12 @@ declare global {
         }[];
       }
 
-      export interface MeasureEntry extends PerformanceEntry {
+      export interface MeasureEntry {
+        // From PerformanceEntry
+        readonly duration: number;
+        readonly entryType: string;
+        readonly name: string;
+        readonly startTime: number;
         /** Whether timing entry was collected during artifact gathering. */
         gather?: boolean;
       }
@@ -447,16 +454,17 @@ declare global {
         fmpFellBack: boolean;
       }
 
+      /** Information on a tech stack (e.g. a JS library) used by the page. */
       export interface DetectedStack {
-        /** The identifier on how this stack got detected */
+        /** The identifier for how this stack was detected. */
         detector: 'js';
-        /** The unique name of the stack stripped of special characters */
+        /** The unique string ID for the stack. */
         id: string;
-        /** The name of the stack */
+        /** The name of the stack. */
         name: string;
-        /** The version of the stack we found */
-        version: string;
-        /** The package name on NPM if it exists */
+        /** The version of the stack, if it could be detected. */
+        version?: string;
+        /** The package name on NPM, if it exists. */
         npm?: string;
       }
     }
