@@ -30,14 +30,14 @@ describe('Screenshot thumbnails', () => {
         const framePath = path.join(__dirname,
             `../fixtures/traces/screenshots/progressive-app-frame-${index}.jpg`);
         const expectedData = fs.readFileSync(framePath, 'base64');
-        assert.equal(expectedData.length, result.data.length);
+        expect(result.data.length - 'data:image/jpeg;base64,'.length).toEqual(expectedData.length);
       });
 
       assert.ok(results.rawValue);
       assert.equal(results.details.items[0].timing, 82);
       assert.equal(results.details.items[2].timing, 245);
       assert.equal(results.details.items[9].timing, 818);
-      assert.equal(results.details.items[0].timestamp, 225414253815);
+      assert.equal(results.details.items[0].timestamp, 225414253.815);
     });
   }, 10000);
 
