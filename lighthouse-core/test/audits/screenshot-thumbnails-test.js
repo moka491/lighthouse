@@ -30,7 +30,8 @@ describe('Screenshot thumbnails', () => {
         const framePath = path.join(__dirname,
             `../fixtures/traces/screenshots/progressive-app-frame-${index}.jpg`);
         const expectedData = fs.readFileSync(framePath, 'base64');
-        expect(result.data.length - 'data:image/jpeg;base64,'.length).toEqual(expectedData.length);
+        const actualData = result.data.slice('data:image/jpeg;base64,'.length)
+        expect(actualData).toEqual(expectedData);
       });
 
       assert.ok(results.rawValue);
