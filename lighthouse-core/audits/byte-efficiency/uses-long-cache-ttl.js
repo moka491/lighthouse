@@ -242,7 +242,7 @@ class CacheHeaders extends Audit {
         let debugData;
         if (cacheControl) {
           debugData = {
-            type: 'debug',
+            type: 'debugdata',
             ...cacheControl,
           };
         }

@@ -51,7 +51,7 @@ declare global {
         overallSavingsBytes?: number;
         headings: OpportunityColumnHeading[];
         items: OpportunityItem[];
-        diagnostic?: DebugData;
+        debugData?: DebugData;
       }
 
       export interface Screenshot {
@@ -68,7 +68,7 @@ declare global {
           wastedMs?: number;
           wastedBytes?: number;
         };
-        debug?: DebugData;
+        debugData?: DebugData;
       }
 
       /**
@@ -76,7 +76,7 @@ declare global {
        * for including debug information in the LHR. Can contain anything.
        */
       export interface DebugData {
-        type: 'debug';
+        type: 'debugdata';
         [p: string]: any;
       }
 
@@ -102,7 +102,7 @@ declare global {
       }
 
       export type TableItem = {
-        diagnostic?: DebugData;
+        debugData?: DebugData;
         [p: string]: string | number | boolean | undefined | DebugData | NodeValue | LinkValue | UrlValue | CodeValue;
       }
 
@@ -128,7 +128,7 @@ declare global {
         wastedBytes?: number;
         totalBytes?: number;
         wastedMs?: number;
-        diagnostic?: DebugData;
+        debugData?: DebugData;
         [p: string]: number | boolean | string | undefined | DebugData;
       }
 

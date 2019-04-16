@@ -182,7 +182,7 @@ describe('DetailsRenderer', () => {
 
     it('does not render internal-only diagnostic details', () => {
       const details = {
-        type: 'debug',
+        type: 'debugdata',
         items: [{
           failures: ['No manifest was fetched'],
           isParseFailure: true,

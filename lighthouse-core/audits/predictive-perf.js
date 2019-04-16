@@ -91,7 +91,7 @@ class PredictivePerf extends Audit {
       rawValue: values.roughEstimateOfTTI,
       displayValue: Util.formatMilliseconds(values.roughEstimateOfTTI),
       details: {
-        type: 'debug',
+        type: 'debugdata',
         // TODO: Consider not nesting values under `items`.
         items: [values],
       },

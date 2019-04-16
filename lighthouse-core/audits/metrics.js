@@ -110,7 +110,7 @@ class Metrics extends Audit {
 
     /** @type {LH.Audit.Details.DebugData} */
     const details = {
-      type: 'debug',
+      type: 'debugdata',
       // TODO: Consider not nesting metrics under `items`.
       items: [metrics],
     };

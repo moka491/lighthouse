@@ -64,10 +64,10 @@ class AxeAudit extends Audit {
     ];
 
     /** @type {LH.Audit.Details.DebugData|undefined} */
-    let diagnostic;
+    let debugData;
     if (impact || tags) {
-      diagnostic = {
-        type: 'debug',
+      debugData = {
+        type: 'debugdata',
         impact,
         tags,
       };
@@ -78,7 +78,7 @@ class AxeAudit extends Audit {
       extendedInfo: {
         value: rule,
       },
-      details: {...Audit.makeTableDetails(headings, items), debug: diagnostic},
+      details: {...Audit.makeTableDetails(headings, items), debugData},
     };
   }
 }
