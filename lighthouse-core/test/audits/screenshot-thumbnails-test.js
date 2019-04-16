@@ -37,7 +37,7 @@ describe('Screenshot thumbnails', () => {
       assert.equal(results.details.items[0].timing, 82);
       assert.equal(results.details.items[2].timing, 245);
       assert.equal(results.details.items[9].timing, 818);
-      assert.equal(results.details.items[0].timestamp, 225414253.815);
+      assert.equal(results.details.items[0].timestamp, 225414253815);
     });
   }, 10000);
 

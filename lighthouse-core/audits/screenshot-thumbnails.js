@@ -129,7 +129,7 @@ class ScreenshotThumbnails extends Audit {
       }
       thumbnails.push({
         timing: Math.round(targetTimestamp - speedline.beginning),
-        timestamp: targetTimestamp,
+        timestamp: targetTimestamp * 1000,
         data: `data:image/jpeg;base64,${base64Data}`,
       });
     }
