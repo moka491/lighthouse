@@ -43,6 +43,7 @@ class LighthouseReportViewer {
     this._reportIsFromGist = false;
 
     this._addEventListeners();
+    this._loadFromGetUrl();
     this._loadFromDeepLink();
     this._listenForMessages();
   }
@@ -102,6 +103,22 @@ class LighthouseReportViewer {
       this._reportIsFromGist = true;
       this._replaceReportHtml(reportJson);
     }).catch(err => logger.error(err.message));
+  }
+
+  _loadFromGetUrl() {
+    const e = new URLSearchParams(location.search).get("url");
+    return e ? this.getUrlFileContentAsJson(e).then(e => {
+      this._replaceReportHtml(e)
+    }).catch(e => logger.error(e.message)) : Promise.resolve()
+  }
+
+  getUrlFileContentAsJson(e) {
+    return fetch(e, {
+      mode: "cors"
+    }).then(e => {
+      if (!e.ok) throw new Error(`${e.status} error while loading json from url!`);
+      return e.json()
+    })
   }
 
   /**
