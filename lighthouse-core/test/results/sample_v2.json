@@ -474,7 +474,7 @@
       "rawValue": false,
       "explanation": "Failures: No manifest was fetched.",
       "details": {
-        "type": "debug",
+        "type": "debugdata",
         "items": [
           {
             "failures": [
@@ -495,7 +495,7 @@
       "rawValue": false,
       "explanation": "Failures: No manifest was fetched.",
       "details": {
-        "type": "debug",
+        "type": "debugdata",
         "items": [
           {
             "failures": [
@@ -516,7 +516,7 @@
       "rawValue": false,
       "explanation": "Failures: No manifest was fetched,\nNo `<meta name=\"theme-color\">` tag found.",
       "details": {
-        "type": "debug",
+        "type": "debugdata",
         "items": [
           {
             "failures": [
@@ -809,7 +809,7 @@
       "scoreDisplayMode": "informative",
       "rawValue": 1,
       "details": {
-        "type": "debug",
+        "type": "debugdata",
         "items": [
           {
             "numRequests": 18,
@@ -1243,7 +1243,7 @@
       "scoreDisplayMode": "informative",
       "rawValue": 4927.278,
       "details": {
-        "type": "debug",
+        "type": "debugdata",
         "items": [
           {
             "firstContentfulPaint": 3969,
@@ -1448,8 +1448,8 @@
             }
           }
         ],
-        "debug": {
-          "type": "debug",
+        "debugData": {
+          "type": "debugdata",
           "impact": "serious",
           "tags": [
             "cat.color",
@@ -1536,8 +1536,8 @@
             }
           }
         ],
-        "debug": {
-          "type": "debug",
+        "debugData": {
+          "type": "debugdata",
           "impact": "serious",
           "tags": [
             "cat.language",
@@ -1609,8 +1609,8 @@
             }
           }
         ],
-        "debug": {
-          "type": "debug",
+        "debugData": {
+          "type": "debugdata",
           "impact": "critical",
           "tags": [
             "cat.text-alternatives",
@@ -1675,8 +1675,8 @@
             }
           }
         ],
-        "debug": {
-          "type": "debug",
+        "debugData": {
+          "type": "debugdata",
           "impact": "critical",
           "tags": [
             "cat.forms",
@@ -1733,8 +1733,8 @@
             }
           }
         ],
-        "debug": {
-          "type": "debug",
+        "debugData": {
+          "type": "debugdata",
           "impact": "serious",
           "tags": [
             "cat.name-role-value",
@@ -1820,8 +1820,8 @@
             }
           }
         ],
-        "debug": {
-          "type": "debug",
+        "debugData": {
+          "type": "debugdata",
           "impact": "serious",
           "tags": [
             "cat.text-alternatives",
